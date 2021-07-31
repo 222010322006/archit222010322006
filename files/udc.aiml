@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>help</pattern>
+        <template>you can use the chat to to remmeber you name by typing, </template>
+    </category>
+  <category>
+    <pattern>*</pattern>
+    <template>im sorry that does not match our services, type 'help' for help with the chatbot</template>
+  </category>
+  <category>
+      <pattern>I AM *</pattern>
+      <template>thanks for telling me.
+       <learn>
+          <category>
+          <pattern>what am i</pattern>
+          <template>you told me you were <eval><star/></eval>
+          </template>
+          </category>
+      </learn>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>* IS *</pattern>
+      <template>ok ill remember that.
+      <learn>
+          <category>
+              <pattern>what is <eval><star/></eval></pattern>
+              <template>i believe it is <eval><star index="2"/></eval></template>
+          </category>
+      </learn>
+      </template>
+      
+  </category>
+  <category>
+      <pattern>* are  *</pattern>
+      <template>ok ill remember that.
+      <learn>
+          <category>
+              <pattern>what are <eval><star/></eval></pattern>
+              <template> <eval><star index="2"/></eval></template>
+          </category>
+      </learn>
+      </template>
+      
+  </category>
+  <card>
+      <image></image>
+      <title></title>
+      <subtitle>press help</subtitle>
+      <button>
+          <text>press help</text>
+          <postback>dd</postback>
+      </button>
+  </card>
+</aiml>
